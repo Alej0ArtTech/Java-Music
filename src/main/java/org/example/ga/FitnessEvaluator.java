@@ -22,6 +22,11 @@ public class FitnessEvaluator {
         return targetBeats;
     }
 
+    public Set<Integer> getScale() {
+        return scale;
+    }
+
+
     /**
      * Puntaje total: combinación de cinco sub-fitness y penalización de duración.
      */

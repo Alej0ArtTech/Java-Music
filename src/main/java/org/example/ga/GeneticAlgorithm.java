@@ -56,11 +56,37 @@ public class GeneticAlgorithm {
     private Phrase randomPhrase() {
         Phrase p = new Phrase();
         double sum = 0, limit = evaluator.getTargetBeats();
-        while (sum < limit) {
+        double half = limit / 2.0;
+        List<NotePool.NoteData> motif = new ArrayList<>();
+
+        // Sección PREGUNTA: llena la primera mitad con un motivo
+        while (sum < half) {
             NotePool.NoteData nd = generator.next();
-            double d = nd.duration;
-            if (sum + d > limit) d = limit - sum;
-            p.add(new jm.music.data.Note(nd.pitch, d)); sum += d;
+            // Asegurar que arranque con la tónica (ej. C4)
+            if (motif.isEmpty()) {
+                nd = new NotePool.NoteData(evaluator.getScale().iterator().next(), nd.duration);
+            }
+            double dur = Math.min(nd.duration, half - sum);
+            p.add(new jm.music.data.Note(nd.pitch, dur));
+            motif.add(new NotePool.NoteData(nd.pitch, dur));
+            sum += dur;
+        }
+
+        // Sección RESPUESTA: repetir el motivo con ligera variación
+        double sum2 = 0;
+        for (NotePool.NoteData nd : motif) {
+            if (sum2 >= half) break;
+            // Variación: pequeño ajuste de altura opcional
+            int pitch = nd.pitch + (rand.nextBoolean() ? 1 : -1);
+            double dur = Math.min(nd.duration, half - sum2);
+            p.add(new jm.music.data.Note(pitch, dur));
+            sum2 += dur;
+        }
+
+        // Ajuste final: si sobra beat, rellena con la tónica
+        if (sum + sum2 < limit) {
+            double rem = limit - (sum + sum2);
+            p.add(new jm.music.data.Note(evaluator.getScale().iterator().next(), rem));
         }
         return p;
     }
