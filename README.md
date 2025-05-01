@@ -1,16 +1,11 @@
-# ¡SOLICITUD DE EXTENSIÓN DE PLAZO!
-
-## ¡POR FAVOR, NECESITO UN DÍA MÁS PARA ENTREGAR MI TRABAJO! 🙏
+# Hola
 
 **Estimado/a Team de codigo facilito,**
 
-Debido a circunstancias imprevistas, no he podido completar mi trabajo en el plazo original. Estoy solicitando amablemente **un día adicional** para entregarlo y asegurarme de que esté a la altura de las expectativas.
+No he podido termianr el trabajo el día de hoy, sin embargo, lo terminaré el día de hoy, estoy buscando solución a problemas tecnicos.
+Solicito un día, el día 02 me compomento a tener una presentación formal terminada.
 
+En caso de nos ser posible, lo entiendo perfectamente e igualmente agradezco su tiempo.
 
-**Aprecio mucho su comprensión y paciencia.**
-
-
-¡Gracias por considerar mi solicitud! 🙇‍♀️
-
-Saludos cordiales,  
+Atentamente,
 Edgar Alejandor Luna Celis
